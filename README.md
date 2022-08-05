@@ -1,6 +1,6 @@
 # SIMPLO - zadání pro FE developera
 
-Vytvořte ve [Vue.js](https://vuejs.org) jednoduchou SPA, která bude sloužit jako administrace. Aplikace bude obsahovat základní správu zákazníků a zákaznických skupin. Navržené rozhraní by mělo být založeno na [CRUD](https://www.codecademy.com/articles/what-is-crud) paradigmatu pro entity a používat JSON pro výměnu dat. Může se hodit [json-server](https://github.com/typicode/json-server). Data pro "API" by tedy také měla být uchovávána ve formě JSONu a aplikace requesty provádět asynchronně. O stav aplikace se bude starat knihovna [Vuex](https://vuex.vuejs.org/) a o navigaci [Vue Router](https://router.vuejs.org)
+Vytvořte ve [Vue.js](https://vuejs.org) jednoduchou SPA, která bude sloužit jako administrace. Aplikace bude obsahovat základní správu zákazníků a zákaznických skupin. Navržené rozhraní by mělo být založeno na [CRUD](https://www.codecademy.com/articles/what-is-crud) paradigmatu pro entity a používat JSON pro výměnu dat. Může se hodit [json-server](https://github.com/typicode/json-server). Data pro "API" by tedy také měla být uchovávána ve formě JSONu a aplikace requesty provádět asynchronně. O stav aplikace se bude starat knihovna [Vuex/Pinia](https://vuex.vuejs.org/) a o navigaci [Vue Router](https://router.vuejs.org)
 
 Aplikace se bude skládat z následujících entit:
 
