@@ -1,27 +1,42 @@
 # SIMPLO - zadání pro FE developera
 
-Vytvořte ve [Vue.js](https://vuejs.org) jednoduchou SPA, která bude sloužit jako administrace. Aplikace bude obsahovat základní správu zákazníků a zákaznických skupin. Navržené rozhraní by mělo být založeno na [CRUD](https://www.codecademy.com/articles/what-is-crud) paradigmatu pro entity a používat JSON pro výměnu dat. Může se hodit [json-server](https://github.com/typicode/json-server). Data pro "API" by tedy také měla být uchovávána ve formě JSONu a aplikace requesty provádět asynchronně. O stav aplikace se bude starat knihovna [Pinia](https://pinia.vuejs.org/) a o navigaci [Vue Router](https://router.vuejs.org)
-
-Aplikace se bude skládat z následujících entit:
-
-### Customer
-
-Konkrétní zákazník. Pro tuto entitu vytvořte UI dle CRUD paradigmatu. Atributy zvolte dle libosti. Zákazník může patřit do 0-N zákaznických skupin. Detail není nutný, pokud budou všechna data editovatelná.
-
-### CustomerGroup
-
-Zákaznická skupina. Pro tuto entitu samostatné rozhraní vytvářet nemusíte.
-Stačí, když si data předem nachystáte.
+Vytvořte jednoduchou webovou aplikaci, která bude sloužit jako administrace. Aplikace bude obsahovat základní správu zákazníků a zákaznických skupin.
+Navržené rozhraní by mělo být založeno na [CRUD](https://www.codecademy.com/articles/what-is-crud) paradigmatu pro entity a používat JSON pro výměnu dat.
 
 ## Požadavky na funkcionalitu
 
- - Pro zákazníky vytvořte výpis ve formě tabulky, ve které půjde dynamicky vyhledávat.
- - Vhodným způsobem zajistěte, aby šlo zákazníka přiřadit do 0-N zákaznických skupin.
- - Pro komunikaci s "API" je nutné vytvořit service pro každou entitu.
- - Vstupy pro vytvoření/editaci entity musí být validovány, například pomocí knihovny [Vuelidate](https://vuelidate-next.netlify.app/).
- - Pro pojmenování css tříd využijte [BEM](https://getbem.com/introduction/)
+### 📦 Entity
+- **Customer** - hlavní entita s libovolnými atributy (např. jméno, e-mail, telefon, poznámka...).
+                Pro tuto entitu vytvořte UI dle CRUD paradigmatu. Zákazník může patřit do 0-N zákaznických skupin.
+                Detail není nutný, pokud budou všechna data editovatelná.
+- **CustomerGroup** - skupina zákazníků. Pro tuto entitu samostatné rozhraní vytvářet nemusíte, stačí, když si data předem nachystáte.
 
-### Pro bonusové body
+### 🔧 Funkce
+- Přehled zákazníků ve formě tabulky, s možností dynamického vyhledávání
+- Vhodným způsobem zajistěte, aby šlo zákazníka přiřadit do 0-N zákaznických skupin
+- Pro každou entitu vytvořte:
+  - Service vrstvu pro komunikaci s API
+  - Datový model
 
- - Vytvořte rozhraní pro zákaznické skupiny.
- - Vytvořte model pro obě entity.
+### ⚙️ Architektura
+- Správa stavu aplikace pomocí knihovny [Pinia](https://pinia.vuejs.org/)
+- Asynchronní komunikace s "backendem" pomocí REST API v JSON formátu
+- Pro pojmenování css tříd využijte [BEM](https://getbem.com/introduction/)
+
+
+## Varianty implementace
+
+### Vue SPA
+Vytvořte single-page aplikaci pomocí [Vue.js](https://vuejs.org) a [Vue Router](https://router.vuejs.org/). Pro simulovaný backend použijte [json-server](https://github.com/typicode/json-server)
+a data uchovávejte v JSON formátu.
+
+### Nuxt (SSR)
+V případě, že ovládáte [Nuxt.js](https://nuxt.com), zvolte tuto variantu. Vytvořte aplikaci, která bude využívat SSR (server-side rendering)
+a bude mít stejnou funkcionalitu. Simulovaný backend realizujte pomocí vlastního jednoduchého API v [Nuxt server routes](https://nuxt.com/docs/guide/directory-structure/server).
+Pro ukládání dat na serveru použijte [`useStorage()`](https://nitro.build/guide/storage).
+
+
+## 🎯 Pro bonusové body
+ - Použijte TypeScript
+ - Vytvořte rozhraní pro zákaznické skupiny
+ - Přidejte validaci formulářů pomocí knihovny [VeeValidate](https://vee-validate.logaretm.com/v4/) a [Zod](https://zod.dev)
