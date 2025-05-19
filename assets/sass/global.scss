@@ -1,0 +1,30 @@
+@import "~/assets/sass/_variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial';
+}
+
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $container-padding;
+}
+
+.button {
+  display: inline-block;
+  padding: $small-spacing $standard-spacing;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color $transition-speed;
+}
+
+
